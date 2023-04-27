@@ -1,4 +1,4 @@
-import Carousel from "../Components/TourOperadora/carousel";
+import Carousel from "../Components/TourOperadora/Carousel";
 
 export default function Gallery({ data, width, height }) {
   return (
