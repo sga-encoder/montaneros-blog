@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['localhost'],
+    domains: ['cms.montaneros.com.co'],
   },
 }
 
