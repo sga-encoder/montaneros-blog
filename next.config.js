@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['cms.montaneros.com.co', 'montaneros-cms-cpmn.onrender.com'],
+    domains: ['cms.montaneros.com.co', 'montaneros-cms-cpmn.onrender.com', 'res.cloudinary.com'],
   },
 }
 
