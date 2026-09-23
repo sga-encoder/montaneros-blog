@@ -1,4 +1,5 @@
 import Imagen from '../Components/Imagen'
+import clasesTransform from '../Components/clasesTransform'
 
 export default function List({ data }) {
   const { titulo, nesecitaUnRecurso, recurso, puntos } = data
@@ -6,7 +7,7 @@ export default function List({ data }) {
     <section className='relative w-full h-full flex justify-center items-center mb-20'>
       {
         nesecitaUnRecurso && (
-          <div className='absolute top-0 w-full h-full mt-20 lg:p-36 lg:mt-0'>
+          <div className={`absolute top-0 w-full h-full mt-20 lg:p-36 lg:mt-0 transform ${clasesTransform(recurso)}`}>
             <Imagen data={recurso.recurso} style='object-contain w-auto h-full' />
           </div>
         )

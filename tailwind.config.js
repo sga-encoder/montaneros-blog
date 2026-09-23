@@ -7,6 +7,13 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
+  // Las clases de translate y rotate llegan como texto desde el CMS
+  // (field/translateX.ts, translateY.ts y rotate.ts), así que Tailwind no las
+  // ve en el código fuente y no las generaría.
+  safelist: [
+    { pattern: /^-?translate-(x|y)-/ },
+    { pattern: /^-?rotate-/ }
+  ],
   theme: {
     extend: {
       colors: {
@@ -34,6 +41,11 @@ module.exports = {
           800: '#5D8A09',
           900: '#4E7800'
         }
+      },
+      // El select rotate del CMS ofrece 270 y 360, que Tailwind no trae
+      rotate: {
+        270: '270deg',
+        360: '360deg'
       },
       fontFamily: {
         sans: [...fontFamily.sans],

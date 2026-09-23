@@ -2,6 +2,7 @@ import Image from 'next/image'
 import ButtonPrimary from '@/components/Buttons/ButtonPrimary'
 import Link from 'next/link'
 import Imagen from '../Components/Imagen'
+import clasesTransform from '../Components/clasesTransform'
 
 export default function Content({ data }) {
   const { titulo, contenido, nesecitaUnRecurso, recurso, nesecitaUrl, url } = data
@@ -10,7 +11,7 @@ export default function Content({ data }) {
     <article className='h-96 relative rounded-2xl'>
       {
         nesecitaUnRecurso ?
-          <Imagen data={recurso.recurso} style="w-auto h-full rounded-2xl" />
+          <Imagen data={recurso.recurso} style={`w-auto h-full rounded-2xl transform ${clasesTransform(recurso)}`} />
           : null  
       }
       <div className='flex w-auto pt-10 justify-center items-center flex-col absolute top-0 drop-shadow-lg'>

@@ -1,4 +1,5 @@
 import Imagen from '../Components/Imagen'
+import clasesTransform from '../Components/clasesTransform'
 
 export default function Header({ data, title }) {
   const { imagenes, recurso, estiloDeCabecera } = data
@@ -12,9 +13,11 @@ export default function Header({ data, title }) {
           <div className='col-start-3 transform scale-110 rotate-6 translate-x-2 translate-y-15'>
             <Imagen data={imagenes[1].imagen} style="object-cover rounded-2xl" />
           </div>
-          <div className='absolute w-full h-screen transform scale-150 lg:scale-100 translate-y-2 lg:-translate-y-10 p-8'>
-            <Imagen data={recurso.recurso} style="object-contain w-full h-full" />
-          </div>
+          {recurso?.recurso && (
+            <div className={`absolute w-full h-screen transform scale-150 lg:scale-100 p-8 ${clasesTransform(recurso, { translate: 'translate-y-2 lg:-translate-y-10' })}`}>
+              <Imagen data={recurso.recurso} style='object-contain w-full h-full' />
+            </div>
+          )}
           <div className='transform rotate-6 scale-110 translate-y-11'>
             <Imagen data={imagenes[2].imagen} style="object-cover rounded-2xl" />
           </div>
@@ -36,9 +39,11 @@ export default function Header({ data, title }) {
           <div className='transform w-1/3 rotate-12 translate-y-10'>
             <Imagen data={imagenes[0].imagen} style="object-cover rounded-2xl" />
           </div>
-          <div className='absolute w-full h-screen transform p-16 translate-y-14 -rotate-12'>
-            <Imagen data={recurso.recurso} style="object-contain w-full h-full" />
-          </div>
+          {recurso?.recurso && (
+            <div className={`absolute w-full h-screen transform p-16 ${clasesTransform(recurso, { translate: 'translate-y-14', rotate: '-rotate-12' })}`}>
+              <Imagen data={recurso.recurso} style='object-contain w-full h-full' />
+            </div>
+          )}
           <div className='transform w-1/3 -rotate-12 -translate-y-10'>
             <Imagen data={imagenes[1].imagen} style="object-cover rounded-2xl" />
           </div>
@@ -56,9 +61,11 @@ export default function Header({ data, title }) {
           <div className='transform w-1/3 rotate-12 translate-x-64 translate-y-16'>
             <Imagen data={imagenes[0].imagen} style="object-cover rounded-2xl" />
           </div>
-          <div className='absolute w-full h-auto p-16 transform translate-x-0 translate-y-0 rotate-0'>
-            <Imagen data={recurso.recurso} style="object-contain w-full h-full" />
-          </div>
+          {recurso?.recurso && (
+            <div className={`absolute w-full h-auto p-16 transform ${clasesTransform(recurso, { translate: 'translate-x-0 translate-y-0', rotate: 'rotate-0' })}`}>
+              <Imagen data={recurso.recurso} style='object-contain w-full h-full' />
+            </div>
+          )}
           <div className='transform w-1/3 -rotate-12 -translate-y-6'>
             <Imagen data={imagenes[1].imagen} style="object-cover rounded-2xl" />
           </div>
