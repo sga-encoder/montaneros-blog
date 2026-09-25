@@ -12,7 +12,7 @@ export default function Imagen ({data, style}) {
       src={data.url}
       width={data.width}
       height={data.height}
-      alt={data.filename}
+      alt={data.alt || data.filename}
       unoptimized={isSvg}
     />
   )

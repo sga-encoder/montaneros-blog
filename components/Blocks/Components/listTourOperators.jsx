@@ -23,11 +23,13 @@ export default function ListToursOperators({ data, origen, type }) {
             type === 'servicio' ? null :
             <div className="w-full">
               <div className="w-full flex p-2">
-                <div className="p-2 ">
-                  <Imagen data={autor.photo} style='w-10 h-10 rounded-full overflow-hidden' />
-                </div>
+                {autor?.photo && (
+                  <div className="p-2 ">
+                    <Imagen data={autor.photo} style='w-10 h-10 rounded-full overflow-hidden' />
+                  </div>
+                )}
                 <div className="pl-2 pt-2 ">
-                  <p className="font-bold capitalize text-primary-100" >{ autor.nombre } { autor.apellidos} </p>
+                  <p className="font-bold capitalize text-primary-100" >{ autor?.nombre } { autor?.apellidos} </p>
                   <p className="text-xs text-primary-300">{time}</p>
                 </div>
               </div>
